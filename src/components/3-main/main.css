@@ -1,0 +1,260 @@
+/* ======================
+table of contents
+========================= 
+
+1.left-section == button 
+2.rightt-section == card
+
+3.Responive designe ( media query )
+*/
+
+
+main.flex {
+   
+    gap: 0.9rem;
+    align-items: start;
+    /* bache les swalh li yjo tamk yjo fal badya w mal fog */
+   
+
+}
+
+/* ======================
+1.left-section == button 
+=======================*/
+
+main section.left-section.flex {
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+main section.left-section button {
+
+    background-color: rgba(36, 37, 46, 1);
+    width: 11.2rem;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 1.05rem;
+    text-transform: capitalize;
+    opacity: 0.5;
+    border-radius: 8px;
+    transition: 0.3s;
+
+}
+
+main section.left-section button:hover {
+    opacity: 1;
+}
+
+main section.left-section button.active {
+    opacity: 1;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    padding: 0.8rem 0;
+    border: 1px solid var(--blue);
+
+}
+.light main section.left-section button.active {
+    
+    border: 1px solid #000
+
+}
+main section.left-section button.ia {
+    opacity: 1;
+    font-weight: bold;
+    letter-spacing: 0.1px;
+    padding: 0.75rem 0;
+    border: 1px solid var(--blue);
+
+}
+
+
+/* ======================
+2.rightt-section == card
+=========================*/
+
+main section.right-section {
+    justify-content: center;
+     flex-grow: 1; 
+    /*hadi bache yadi espace kbir yadi bzzf parapour li rah m3ah */
+    flex-wrap: wrap; /* il akyan kayn espace fal page ydirhom hda ba3d ila mknche ydirhom tahat ba3d */
+    
+    column-gap: 16px;
+    row-gap: 2rem;
+}
+
+.card {
+    box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.16) , 1px 2px 2px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(93, 188, 252, 0.3);
+    border-radius: 5px;
+    transition: 0.3s;
+    background-image: linear-gradient(
+                    rgba(255, 255, 255, 0.0+5),
+                    rgba(255, 255, 255, 0.05)
+     );
+    /* degradation entre les coleurs*/
+
+}
+.light .card,.light .card:hover  {
+    
+    border: none;
+    
+
+}
+
+.card:hover {
+    border: 1px solid var(--blue);
+    background-color: rgba(79, 79, 77, 0.484);
+    rotate: 1deg;
+    scale: 1.01;
+    cursor: pointer;
+}
+
+
+
+.card img {
+    width :240px;
+    height: 220px;
+    border: 1px solid rgba(93, 188, 252, 0.3);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.card .box {
+    height: 120px;
+    width :240px;
+    padding-top: 1rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+}
+
+.card .box .title {
+    font-size: 1rem;
+    color: var(--title);
+    text-transform: capitalize;
+}
+
+.card .box .sub-title {
+    color: var(--subtitle);
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+    margin-bottom: 1.1rem;
+} 
+
+/* icons */
+
+.card  .icons {
+    justify-content: space-between;
+    padding: 0.4rem 0.4rem;
+}
+
+.card  .icon-github,
+.icon-link {
+    font-size: 1rem;
+    color: var(--subtitle);
+    transition: 0.3s;
+}
+
+.card  .icon-github:hover,
+.icon-link:hover {
+    font-size: 1.25rem;
+    color: var(--icon-hover);
+    cursor: pointer;
+}
+
+.card a.link {
+    font-size: 0.9rem;
+    color: var(--blue);
+    margin-right: 12px;
+}
+
+
+
+/* partri  de more */
+
+div .fixed{
+    position: fixed;
+    inset: 0;
+    z-index: 11;
+    background-color: rgb(40, 40, 48,0.91);
+    
+    /*filter: blur(3px);*/ /*hadi traja3lk hada ga3 flus*/
+    backdrop-filter: blur(4px); /*hadi traja3lk li mor hada flus*/
+    
+}
+
+/*ANNIMATION  */
+@keyframes mymove {
+   0%   {scale: 0;}
+   60% {scale: 1.2;}
+   100% {scale: 1;}
+ } 
+ 
+div .fixed ul.modal{
+    animation: mymove 0.7s ;
+
+   width: 75%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 2rem;
+   border-radius: 1rem;
+   padding:1rem  2rem ;
+   background-color: var(--secondary);
+}
+
+
+
+div .fixed ul.modal li{
+    border-bottom: 1px  solid var(--border);
+    padding-bottom: 0.77rem;
+    padding-top: 0.5rem;
+}
+ div .fixed ul.modal li:first-child{
+    text-align: right;
+    border: none;
+    padding-bottom: 0%;
+    padding-top: 0.2rem;
+    margin-bottom:1rem ;
+
+}
+div .fixed ul.modal li p.paragraphe {
+    line-height: 1.5rem; /* Espacement entre les lignes */
+    max-height: 600px; /* Hauteur maximale (ajuste cette valeur selon tes besoins) */
+    overflow-y: auto; /* Ajoute une barre de défilement verticale si le contenu dépasse la hauteur */
+    padding-right: 20px; /* Ajoute un peu d'espace pour éviter que le texte ne chevauche la barre de défilement */
+    text-align: justify ; 
+}
+
+
+
+
+
+
+/* ======================
+3. Responsive designe (media query )
+=========================*/
+
+
+@media (max-width: 600px) {
+    main.flex {
+        flex-direction: column; /* bache ywalo les boton ta3 gauche w les articles taht ba3d ywalo fi column wahda */ 
+        gap: 0.9rem;
+        align-items: center;
+          }
+
+     main section.left-section.flex {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        
+        }
+    main section.left-section button {
+            width: 7rem;
+            padding: 0.8rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        
+        }
+  
+  }
