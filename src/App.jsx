@@ -9,6 +9,26 @@ import { useEffect, useState } from 'react'
 
 
 
+// src/App.js
+// src/App.jsx
+//import React from "react";
+//import ProjectsList from "./components/ProjectsList";
+//
+//function App() {
+//  return (
+//    <div>
+//      <ProjectsList />
+//    </div>
+//  );
+//}
+//
+//export default App;
+//
+//
+//
+
+
+
 function App() {
  useEffect(() =>{ 
      window.addEventListener("scroll",() => {
