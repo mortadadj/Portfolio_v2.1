@@ -129,7 +129,7 @@ export default function Main() {
 
 
                 </li>
-                <li><p className='paragraphe'>{Paragraphe} </p></li>
+                <li><p style={{ whiteSpace: "pre-line" }} className='paragraphe'>{Paragraphe} </p></li>
 
               </ul>
 
