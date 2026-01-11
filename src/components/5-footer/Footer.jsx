@@ -37,18 +37,10 @@ export default function Footer() {
 
     </footer>
 
-    <div>
-
-
-    </div>
-    <input 
-    type="file" 
-    
-    onChange={(e) => setFile(e.target.files[0])
-    } />
-
-    <br />
-    <button className='border' onClick={uploadImage}>Upload !!</button>
+  <div>
+  </div>
+  
+  
   </div>
   )
 }
