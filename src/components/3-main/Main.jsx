@@ -95,14 +95,14 @@ export default function Main() {
                 </div>
                 <div className="flex icons">
                   <div style={{ gap: "11px" }} className='flex'>
-                    <div className="icon-link"></div>
-                    <div className="icon-github"></div>
+                    {/*<div className="icon-link"></div>
+                    <div className="icon-github"></div> */}
                   </div>
 
                   <button onClick={() => { setInfoMore(true) , setParagraphe(item.paragraphe) }} >
                     
-                    more
-                    <span style={{ alignSelf: "end" }} className='icon-arrow-right'></span>
+                    
+                    <span className="icon-arrow-right" style={{ alignSelf: "end" }} ></span>
 
                   </button>
 
