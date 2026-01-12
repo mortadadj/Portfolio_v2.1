@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './main.css'
-import { myProjects } from './myProjects';
+import { myProjects } from './myProjects_backup';
 import { AnimatePresence, motion } from 'framer-motion';
 
 

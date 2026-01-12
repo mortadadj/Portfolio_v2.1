@@ -2,8 +2,10 @@ import React from "react";
 import "./footer.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { translations } from "../../i18n/translation";
 
-export default function Footer() {
+export default function Footer({ lang }) {
+  const t = translations[lang];
   return (
     <footer className="footer">
 
@@ -30,7 +32,7 @@ export default function Footer() {
       </div>
 
       <p className="footer-copy">
-        © 2024 Mortada Djebbouri. Tous droits réservés.
+        {t.allRights}
       </p>
 
     </footer>

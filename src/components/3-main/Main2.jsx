@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './main2.css'
-import { myProjects } from './myProjects';
+import { myProjects } from './myProjects.jsx';
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { translations } from "../../i18n/translation";
 
 
 
@@ -16,7 +17,8 @@ import { AnimatePresence, motion } from 'framer-motion';
   
   */ }
 
-export default function Main() {
+export default function Main({ lang }) {
+  const t = translations[lang]; // 👈 texte selon langue
   const [currentActive, setcurrentActive] = useState("all");
   const [arr, setArr] = useState(myProjects);
   const [newItems, setNewItem] = useState(myProjects);
@@ -104,11 +106,12 @@ export default function Main() {
               transition={{ type: "spring", stiffness: 60 }}
               className="project-card"
             >
-              <img src={item.imgPath} alt={item.projectTitle} />
+              <img src={item.imgPath} alt={item.projectTitle[lang]} />
 
               <div className="content">
-                <h3>{item.projectTitle}</h3>
-                <p>{item.subTitel}</p>
+                <h3>{item.projectTitle[lang]}</h3>
+                <p>{item.subTitel[lang]}</p>
+
 
                 {/* BADGES */}
                 <div className="badges">
@@ -125,7 +128,7 @@ export default function Main() {
                   setSelectedProject(item);
                 }}
               >
-                Voir plus →
+                {t.seeMore}
               </button>
             </motion.article>
           ))}
@@ -142,9 +145,10 @@ export default function Main() {
                 </li>
 
                 <li>
-                  <h2>{selectedProject.projectTitle}</h2>
+                  <h2>{selectedProject.projectTitle[lang]}</h2>
+
                   <p style={{ whiteSpace: "pre-line" }} className="paragraphe">
-                    {selectedProject.paragraphe}
+                    {selectedProject.paragraphe[lang]}
                   </p>
                 </li>
 
