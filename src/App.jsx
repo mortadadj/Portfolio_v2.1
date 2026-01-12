@@ -8,29 +8,18 @@ import Footer from './components/5-footer/Footer'
 import { useEffect, useState } from 'react'
 import Main from './components/3-main/Main2'
 
-
-
-// src/App.js
-// src/App.jsx
-//import React from "react";
-//import ProjectsList from "./components/ProjectsList";
-//
-//function App() {
-//  return (
-//    <div>
-//      <ProjectsList />
-//    </div>
-//  );
-//}
-//
-//export default App;
-//
-//
-//
-
-
-
 function App() {
+  // 🌍 langue globale
+  const [lang, setLang] = useState(
+    localStorage.getItem("lang") ?? "fr"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
+
+const [showScrollBTN,setshowScrollBTN]=useState(false);
+
  useEffect(() =>{ 
      window.addEventListener("scroll",() => {
        if(window.scrollY>200){
@@ -39,35 +28,28 @@ function App() {
        else{
         setshowScrollBTN(false)
        }
-
-       
      }
      )
  },[])
- const [showScrollBTN,setshowScrollBTN]=useState(false);
+  
+  
 
   return (
-    <div id='up' className=' container'>
-      <Header/>
-      
-      <Hero/>
-      <div className=' divider'/>
-      <Main/>
-      <div className='divider'/>
-      <Contact/>
-      <div className='divider'/>
-      <Footer/> 
-{/*   {showScrollBTN && (<a href="#up">
-      <button className=' icon-keyboard_arrow_up scroll2Top '></button>
-      </a>)}
-*/}
-     <a style={{opacity: showScrollBTN? 1 : 0 ,transition:"3s"}} href="#up">
-      <button className=' icon-keyboard_arrow_up scroll2Top '></button>
+    <div id="up" className="container">
+      <Header lang={lang} setLang={setLang} />
+      <Hero lang={lang} />
+      <div className="divider" />
+      <Main lang={lang} />
+      <div className="divider" />
+      <Contact lang={lang} />
+      <div className="divider" />
+      <Footer lang={lang} />
+
+      <a style={{ opacity: showScrollBTN ? 1 : 0 }} href="#up">
+        <button className="icon-keyboard_arrow_up scroll2Top"></button>
       </a>
-    
     </div>
-  )
+  );
 }
 
-
-export default App
+export default App;

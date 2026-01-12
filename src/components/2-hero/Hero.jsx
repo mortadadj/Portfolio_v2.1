@@ -6,14 +6,12 @@ import Lottie from "lottie-react";
 
 import devAnimation from "../../animation/dev.json"
 import { motion } from 'framer-motion';
+import { translations } from "../../i18n/translation";
 
-export default function Hero() {
-
-
+export default function Hero({ lang }) {
+  const t = translations[lang]; // 👈 texte selon langue
   const lottieRef = useRef();
-
   return (
-
     <section id="about" className=' hero flex '>
 
       <div className='left-section '>
@@ -37,10 +35,10 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
           className='title'>
-          Spécialisé en Recherche & Développement Informatique
+          {t.heroTitle}
         </motion.h1>
         <p className='sub-title'>
-          Je suis Mortada Djebbouri, ingénieur en Recherche et Développement Informatique, spécialisé en systèmes embarqués, création d’images système pour cartes électroniques, intégration d’applications embarquées (GPS, communication) et analyse des données, avec une expérience en développement web, mobile et intelligence artificielle.
+          {t.heroSubtitle}
         </p>
         <div className='all-icons flex'>
 
@@ -84,15 +82,7 @@ export default function Hero() {
   >
     <FaLinkedin />
   </a>
-
-
-
-
-
-
         </div>
-
-
       </div>
       <div className='right-section animation '>
         <Lottie
