@@ -1,5 +1,9 @@
 export const translations = {
   fr: {
+    /// header 
+    About: "À propos",
+    Projets: "Projets",
+    Contact: "Contact",
     // hero
     heroTitle: "Spécialisé en Recherche & Développement Informatique",
     heroSubtitle:
@@ -26,6 +30,10 @@ export const translations = {
   },
 
   en: {
+    /// header
+    About: "About",
+    Projets: "Projets",
+    Contact: "Contact",
     // hero
     heroTitle: "Specialized in Computer Research & Development",
     heroSubtitle:

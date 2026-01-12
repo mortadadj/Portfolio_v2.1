@@ -68,7 +68,7 @@ export default function Main({ lang }) {
     <main className="projects-container">
 
       {/* FILTRES */}
-      <section className="filters">
+      <section id='projets' className="filters">
         {[
           { id: "all", label: "All" },
           { id: "css", label: "HTML & CSS" },

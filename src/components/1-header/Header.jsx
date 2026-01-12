@@ -33,12 +33,12 @@ export default function Header({ lang, setLang }) {
       <nav>
         <ul className='flex'>
           <li>
-            <a href="#about">À propos</a>
+            <a href="#about">{t.about}</a>
           </li>
           
          
           <li>
-            <a href="#articles">Articles</a>
+            <a href="#projets">{t.Projets}</a>
           </li>
         {/**
           <li>
@@ -50,7 +50,7 @@ export default function Header({ lang, setLang }) {
           </li>
         */}
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">{t.contact}</a>
           </li>
 
         </ul>
