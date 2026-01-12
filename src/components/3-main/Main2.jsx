@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './main.css'
+import './main2.css'
 import { myProjects } from './myProjects';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -19,151 +19,143 @@ import { AnimatePresence, motion } from 'framer-motion';
 export default function Main() {
   const [currentActive, setcurrentActive] = useState("all");
   const [arr, setArr] = useState(myProjects);
-  const [newItems,setNewItem]=useState(myProjects);
-  let arr1=[]
+  const [newItems, setNewItem] = useState(myProjects);
+  let arr1 = []
   const [InfoMore, setInfoMore] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const [Paragraphe, setParagraphe] = useState('')
 
 
   const handleClick = (buttonCategory) => {
-    
+
     setcurrentActive(buttonCategory);
-    console.log('myProjects///////',myProjects)
-    console.log('myProjects0///////',myProjects[0])
-    console.log('myProjects1///////',myProjects[1])
-    console.log('myProjects2///////',myProjects[2])
-    console.log('myProjects3///////',myProjects[3])
-    console.log('myProjects4///////',myProjects[4])
-      const newArr = myProjects.filter((item) => {
-      
-        const ZZZ = item.category.filter((myItem) => { 
-        
+    console.log('myProjects///////', myProjects)
+    console.log('myProjects0///////', myProjects[0])
+    console.log('myProjects1///////', myProjects[1])
+    console.log('myProjects2///////', myProjects[2])
+    console.log('myProjects3///////', myProjects[3])
+    console.log('myProjects4///////', myProjects[4])
+    const newArr = myProjects.filter((item) => {
 
-        
+      const ZZZ = item.category.filter((myItem) => {
 
-          return myItem === buttonCategory });
-        
-        return ZZZ[0]=== buttonCategory
+
+
+
+        return myItem === buttonCategory
+      });
+
+      return ZZZ[0] === buttonCategory
     });
-    
+
 
     /* const newArr= [myProjects[1]]  hadi mithode tnjm tutilisiha bsh ta3 filtre khir  */
-    console.log("newArr-------",newArr)
-    arr1=[]
-    arr1=newArr
+    console.log("newArr-------", newArr)
+    arr1 = []
+    arr1 = newArr
     setArr(newArr);
-    console.log("setArr(newArr);............",setArr(newArr))
+    console.log("setArr(newArr);............", setArr(newArr))
     setNewItem(newArr);
-    console.log("newItems-------",newItems)
+    console.log("newItems-------", newItems)
 
   }
 
   return (
 
-    <main className='flex'>
+    <main className="projects-container">
 
-
-
-      <section id='articles' className=' flex left-section' >
-        <button onClick={() => {
-          setcurrentActive("all");
-          setArr(myProjects);
-
-        }}className={currentActive === "all" ? "active" : null} >All projects</button>
-
-
-        <button onClick={() => {
-          handleClick("css")
-        }} className={currentActive === "css" ? "active" : null}>HTML & CSS</button>
-
-
-
-
-
-
-
-        <button onClick={() => { handleClick("js") }} className={currentActive === "js" ? "active" : null}>JavaScript</button>
-        <button onClick={() => { handleClick("react") }} className={currentActive === "react" ? "active" : null}>React & MUI</button>
-
-        <button onClick={() => { handleClick("flutter") }} className={currentActive === "flutter" ? "active" : null}>Flutter</button>
-        <button onClick={() => { handleClick("ia") }} className={currentActive === "ia" ? "active" : null}>Intelligence Artificielle</button>
-
-
+      {/* FILTRES */}
+      <section className="filters">
+        {[
+          { id: "all", label: "All" },
+          { id: "css", label: "HTML & CSS" },
+          { id: "js", label: "JavaScript" },
+          { id: "react", label: "React" },
+          { id: "flutter", label: "Flutter" },
+          { id: "ia", label: "IA" },
+        ].map((btn) => (
+          <button
+            key={btn.id}
+            onClick={() => {
+              if (btn.id === "all") {
+                setcurrentActive("all");
+                setArr(myProjects);
+              } else {
+                handleClick(btn.id);
+              }
+            }}
+            className={currentActive === btn.id ? "chip active" : "chip"}
+          >
+            {btn.label}
+          </button>
+        ))}
       </section>
 
-
-
-      <section className=' flex right-section'>
+      {/* PROJETS */}
+      <section className="projects-grid">
         <AnimatePresence>
+          {arr.map((item) => (
+            <motion.article
+              key={item.imgPath}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", stiffness: 60 }}
+              className="project-card"
+            >
+              <img src={item.imgPath} alt={item.projectTitle} />
 
-          {newItems.map((item) => {
-            console.log("newItems right *********",newItems)
-            return (
+              <div className="content">
+                <h3>{item.projectTitle}</h3>
+                <p>{item.subTitel}</p>
 
-              <motion.article
-                layout
-                initial={{ transform: "scale(0)" }}
-                animate={{ transform: "scale(1)" }}
-                transition={{ type: "spring", damping: 8, stiffness: 60 }}
-                //exit={{ transform: "scale(0)" }}
-
-                key={item.imgPath} className=' card'>
-                <img width={"266px"} src={item.imgPath} alt="" />
-                <div className="box">
-                  <h1 className='title'> {item.projectTitle} </h1>
-                  <p className='sub-title'>{item.subTitel}</p>
-
+                {/* BADGES */}
+                <div className="badges">
+                  {item.category.map((c) => (
+                    <span key={c} className="badge">{c}</span>
+                  ))}
                 </div>
-                <div className="flex icons">
-                  <div style={{ gap: "11px" }} className='flex'>
-                    <div className="icon-link"></div>
-                    <div className="icon-github"></div>
-                  </div>
+              </div>
 
-                  <button onClick={() => { setInfoMore(true) , setParagraphe(item.paragraphe) }} >
-                    
-                    more
-                    <span style={{ alignSelf: "end" }} className='icon-arrow-right'></span>
+              <button
+                className="more-btn"
+                onClick={() => {
+                  setInfoMore(true);
+                  setSelectedProject(item);
+                }}
+              >
+                Voir plus →
+              </button>
+            </motion.article>
+          ))}
 
-                  </button>
-
-
-                </div>
-
-              </motion.article>
-
-
-            )
-
-
-
-          }
-          )}
-          {InfoMore && (
-
+          {InfoMore && selectedProject && (
             <div className="fixed">
+              <ul className="modal">
 
-              <ul className="modal ">
-                <li >
-                  <button className="icon-close" onClick={() => { setInfoMore(false) }} />
-
-
-
+                <li>
+                  <button
+                    className="icon-close"
+                    onClick={() => setInfoMore(false)}
+                  />
                 </li>
-                <li><p className='paragraphe'>{Paragraphe} </p></li>
+
+                <li>
+                  <h2>{selectedProject.projectTitle}</h2>
+                  <p style={{ whiteSpace: "pre-line" }} className="paragraphe">
+                    {selectedProject.paragraphe}
+                  </p>
+                </li>
 
               </ul>
-
-
             </div>
-
           )}
 
         </AnimatePresence>
       </section>
 
-
-
     </main>
+
   )
 }

@@ -6,7 +6,7 @@ import Contact from './components/4-contact/Contact'
 //import Contact from './components/4-contact/Cntc'
 import Footer from './components/5-footer/Footer'
 import { useEffect, useState } from 'react'
-import Main from './components/3-main/Main'
+import Main from './components/3-main/Main2'
 
 
 
@@ -56,7 +56,7 @@ function App() {
       <div className='divider'/>
       <Contact/>
       <div className='divider'/>
-      <Footer/>
+      <Footer/> 
 {/*   {showScrollBTN && (<a href="#up">
       <button className=' icon-keyboard_arrow_up scroll2Top '></button>
       </a>)}

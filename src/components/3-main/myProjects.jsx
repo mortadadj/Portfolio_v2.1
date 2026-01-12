@@ -1,41 +1,121 @@
 export const myProjects = [
 
 
-  {
-    projectTitle: "Agenc de Voyage ",
-    category: ["css", "html","react", "js"],
-    imgPath: "/agance_V.png",
-    subTitel: "2 Un algorithme de détection des anomalies dans les images radiographiques des tumeurs cérébrales",
-    resume: "c'est t'un traitemt des images photoradio qui contient un tuymer du cerveu , on a creer un algorithem qui aide dans la detection tumer ce algorimte base sur traitemt image qui divise le cerveu humainne verticale et qu'est compare la partie daroite du cerveua par raport gauche  ",
-    paragraphe: "2 c'est t'un traitemt des images photoradio qui contient un tuymer du cerveu , on a creer un algorithem qui aide dans la detection tumer ce algorimte base sur traitemt image qui divise le cerveu humainne verticale et qu'est compare la partie daroite du cerveua par raport gauche  ,c'est t'un traitemt des images photoradio qui contient un tuymer du cerveu , on a creer s photoradio qui contient un tuymer du cerveu , on a creer un algorithem qui aide dans la detection tumer ce algorimte base sur traitemt image qui divise le cerveu humainne verticale et qu'est compare la partie daroite du cerveua par raport gauche 2 c'est t'un traitemt  la detection tumer ce algorimte base sur traitemt image qui divise le cerveu humainne verticale et qu'est compare la partie daroite du cerveua par raport gauche  c'est t'un traitemt des images photoradio qui contient un tuymer du cerveu , on a creer un algorithem qui aide dans la detection tumer ce algorimte base sur traitemt image qui divise le cerveu humainne verticale et qu'est compare la partie daroite du cerveua par raport gauche  c'est t'un traitemt des images photoradio qui contient un tuymer du cerveu , on a creer un algorithem qui ai "
-  },
+
+{
+  projectTitle: "Site web d’une agence de voyage",
+  category: ["web", "css", "html", "react", "js"],
+  imgPath:  "/agance_V.png",
+  subTitel: "Site vitrine pour la présentation des services et informations",
+  resume: "Site web conçu pour une agence de voyage afin de présenter ses services, ses horaires et les informations importantes destinées aux clients.",
+  paragraphe: `
+Objectif :
+Créer un site web informatif permettant à une agence de voyage de présenter ses services et de communiquer avec ses clients.
+
+Fonctionnalités :
+- Présentation des services proposés par l’agence
+- Affichage des horaires d’ouverture
+- Publication des nouveautés et informations importantes
+- Section de contact
+
+Type de projet :
+Site web vitrine
+
+Approche :
+Le site est conçu avec une navigation simple et une organisation claire de l’information afin d’offrir une bonne expérience utilisateur.
+`
+},
 
 
   {
-    projectTitle: " ia tumer",
-    category: ["ia"],
-    imgPath: "/tumer.jpg",
-    subTitel: "4 Un algorithme de détection des anomalies dans les images radiographiques des tumeurs cérébrales ",
-    resume: "c'est t'un traitemt des images photoradio qui contient un tuymer du cerveu , on a creer un algorithem qui aide dans la detection tumer ce algorimte base sur traitemt image qui divise le cerveu humainne verticale et qu'est compare la partie daroite du cerveua par raport gauche  ",
-    paragraphe: "   "
-  },
+  projectTitle: "Détection des tumeurs cérébrales",
+  category: ["python", "ia","Excel"],
+  imgPath: "/tumer.jpg",
+  subTitel: "Détection d’anomalies dans des images radiographiques cérébrales",
+  resume: "Approche intelligente basée sur le traitement d’images radiographiques pour la détection des tumeurs cérébrales, sans utilisation de modèles pré-entraînés.",
+  paragraphe: `
+Objectif :
+Détecter automatiquement la présence de tumeurs cérébrales à partir d’images radiographiques.
+
+Approche proposée :
+Une approche intelligente basée sur le traitement d’images a été développée, sans recours à un modèle ou algorithme prédéfini. 
+La méthode repose sur l’analyse structurelle des images cérébrales et la comparaison entre les hémisphères droit et gauche du cerveau afin de détecter des anomalies.
+
+Étapes principales :
+- Sélection et analyse d’une base de données d’images médicales
+- Prétraitement des images (filtrage, normalisation, amélioration du contraste)
+- Analyse comparative des régions cérébrales
+- Détection des anomalies structurelles
+
+Résultats :
+- Identification des cas sains et pathologiques
+- Précision obtenue : 93 %
+
+Type de projet :
+Détection d’anomalies dans des images radiographiques médicales
+`
+},
 
 
 
-  {
-    projectTitle: "Jeux Educatifs",
-    category: ["css","flutter","React"],
-    imgPath: "/flater_jeux.jpg",
-    subTitel: "Apprendre l’anglais en jouant, sans pression, grâce à une pédagogie fluide adaptée aux enfants de 3 à 6 ans.",
 
-    resume:"RESUMER VID  ",
-    paragraphe: "Introduction\n\nLes jeux éducatifs représentent une nouvelle manière d’apprendre en combinant plaisir, découverte et technologie. Grâce à des activités interactives, des animations attractives et une approche ludique, l’apprentissage devient une expérience motivante qui stimule la curiosité des enfants et favorise le développement de leurs compétences de base.\n\nL’application « Jeux »\n\nL’application « Jeux » est une application éducative destinée aux enfants âgés de trois à six ans. Son objectif est d’enseigner les bases de la langue anglaise à travers un apprentissage indirect basé sur le jeu, l’exploration et l’interaction. L’enfant apprend naturellement en jouant, sans pression, tout en s’amusant.\n\nApproche pédagogique\n\nCette application s’appuie sur les principes fondamentaux de la pédagogie infantile. Elle encourage l’apprentissage par la découverte, stimule les sens visuel et auditif et favorise l’interaction tactile. Les animations éducatives renforcent l’attention de l’enfant, développent son amour de la découverte et facilitent la mémorisation.\n\nContenus éducatifs\n\nL’application propose des contenus pédagogiques adaptés à l’âge de l’enfant, notamment l’apprentissage des alphabets, des couleurs et des animaux. L’enfant apprend à reconnaître les lettres, leur prononciation et leurs formes. Il découvre également les couleurs et les animaux à travers des images, des sons et des animations, avec les noms présentés en arabe et en anglais afin de renforcer la compréhension et la mémorisation.\n\nÉvaluation ludique\n\nÀ la fin de chaque module, l’enfant passe des tests interactifs et indirects permettant d’évaluer ses acquis de manière naturelle et sans stress. En écoutant les sons et en choisissant les réponses appropriées, l’enfant consolide son apprentissage et gagne en confiance.\n\nConclusion\n\nL’application « Jeux » transforme l’apprentissage en une expérience éducative amusante et enrichissante. En combinant pédagogie, interactivité et plaisir, elle offre aux enfants un environnement idéal pour apprendre, s’épanouir et développer leurs compétences dès le plus jeune âge."
+ {
+  projectTitle: "Jeu éducatif pour enfants",
+  category: ["flutter", "mobile"],
+  imgPath: "/flater_jeux.jpg",
+  subTitel: "Application éducative ludique pour l’apprentissage de l’anglais",
+  resume: "Application éducative mobile destinée aux enfants de 3 à 6 ans, basée sur une approche pédagogique ludique favorisant l’apprentissage de l’anglais sans pression.",
+  paragraphe: `
+Objectif :
+Enseigner les bases de la langue anglaise aux enfants âgés de trois à six ans à travers le jeu, l’exploration et l’interaction.
 
-  },
+Approche pédagogique :
+L’application repose sur les principes de la pédagogie infantile et encourage l’apprentissage par la découverte. 
+Elle stimule les sens visuel, auditif et tactile grâce à des animations éducatives et des interactions simples, adaptées à l’âge de l’enfant.
+
+Contenus éducatifs :
+- Apprentissage de l’alphabet (formes, prononciation)
+- Découverte des couleurs
+- Reconnaissance des animaux
+- Présentation bilingue (arabe / anglais)
+
+Évaluation :
+Des tests ludiques et indirects sont proposés à la fin de chaque module afin d’évaluer les acquis de l’enfant de manière naturelle et sans stress.
+
+Type de projet :
+Application mobile éducative
+`
+},
+
+{
+  projectTitle: "Système de recommandation alimentaire",
+  category: ["python", "ia", "machine learning"],
+  imgPath: "/recommandation-alimentaire.jpg",
+  subTitel: "Recommandation personnalisée de plats en tenant compte des préférences et des contraintes de santé",
+  resume: "Système de recommandation alimentaire proposant des plats personnalisés selon les préférences des utilisateurs, tout en prenant en considération les allergies et les maladies.",
+  paragraphe: `
+Objectif :
+Recommander des plats personnalisés adaptés aux préférences alimentaires et au profil de santé des utilisateurs.
+
+Données utilisées :
+- Base de données de plats et d’ingrédients
+- Données utilisateurs (préférences, catégories appréciées)
+- Informations sur les allergies et les maladies
+
+Approche :
+Le système repose sur des modèles de machine learning combinés à des algorithmes de calcul de similarité.
+Les contraintes de santé sont intégrées sous forme de règles d’exclusion afin d’éviter la recommandation de plats contenant des ingrédients incompatibles.
+
+Fonctionnement :
+Les plats sont recommandés en fonction des catégories appréciées par l’utilisateur, tout en filtrant automatiquement ceux pouvant déclencher des allergies ou aggraver certaines maladies.
+
+Évaluation :
+Le système a été évalué à l’aide d’utilisateurs réels inscrits sur la plateforme, qui ont testé les recommandations et fourni des retours permettant d’évaluer leur pertinence et leur sécurité.
+`
+}
 
 
 
-  
 
 ];
 
