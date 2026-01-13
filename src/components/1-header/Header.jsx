@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 import "./header.css";
-export default function Header() {
+import { FaGlobe } from "react-icons/fa";
+
+import { translations } from "../../i18n/translation";
+export default function Header({ lang, setLang }) {
+  const t = translations[lang]; // 👈 texte selon langue
   const [ShowModal, setshowModal] = useState(false)
 
 
@@ -29,12 +33,12 @@ export default function Header() {
       <nav>
         <ul className='flex'>
           <li>
-            <a href="#about">À propos</a>
+            <a href="#about">{t.about}</a>
           </li>
           
          
           <li>
-            <a href="#articles">Articles</a>
+            <a href="#projets">{t.Projets}</a>
           </li>
         {/**
           <li>
@@ -46,30 +50,46 @@ export default function Header() {
           </li>
         */}
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">{t.contact}</a>
           </li>
 
         </ul>
       </nav>
-      <button onClick={() => {
-        // send value to local storidge
-        localStorage.setItem( // localStorage.setItem tjiblna wad3 l hali li howa light hna drnaha haka
-          "currentMode",  // currentMode li howa key hiya za3ma wade3 al hali 
-          theme === "dark" ? "light" : "dark")  // hadik function ila kan theme howa dark "true " yraj3ah light w ila kan false ya3ni theme != dark ydirlna them ywali dark w hadi  nhavdoha fal localStirage 
 
 
-        // get value from LS
-        setTheme(localStorage.getItem("currentMode"))
-      }
-      } className="mode flex">
-        {theme === "dark" ? (
-          <span className="icon-moon-o"></span>
-        ):(
-          <span className="icon-sun"></span>)
-          }
-        
 
-      </button>
+
+
+          {/* 🌍 Switch langue (1 seul bouton) */}
+          {/* 🌍 + 🌙 actions à droite */}
+<div className="header-actions">
+
+  {/* 🌍 Lang switch */}
+  <button
+    className="lang-toggle"
+    onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+    title={lang === "fr" ? "Switch to English" : "Passer en Français"}
+  >
+    <FaGlobe />
+    <span className="lang-label">{lang.toUpperCase()}</span>
+  </button>
+
+  {/* 🌙 Dark / Light */}
+  <button
+    onClick={() => {
+      const newTheme = theme === "dark" ? "light" : "dark";
+      localStorage.setItem("currentMode", newTheme);
+      setTheme(newTheme);
+    }}
+    className="mode flex"
+  >
+    {theme === "dark"
+      ? <span className="icon-moon-o"></span>
+      : <span className="icon-sun"></span>
+    }
+  </button>
+
+</div>
 
       {ShowModal && (
 

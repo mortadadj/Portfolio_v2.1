@@ -38,9 +38,9 @@ section.hero .icon-verified{
 section.hero .avatar {
     width: 88px;
     border-radius: 50%;
-    border: 1px solid rgba(223, 14, 14, 0.958);
+    border: 1px solid rgba(29, 66, 229, 0.942);
     padding: 1px;
-    box-shadow: 2px 2px 40px rgba(255, 255, 255, 0.938) inset;
+    box-shadow: 2px 2px 40px rgba(239, 5, 177, 0.958) inset;
     
 }
 

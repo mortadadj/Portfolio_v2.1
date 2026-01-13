@@ -80,11 +80,14 @@ export default function Contact() {
  import Lottie from "lottie-react";
  import doneAnimation from "../../animation/done.json"
  import conatctAnimation from "../../animation/contact.json"
- 
- export default function Contact() {
+ import { translations } from "../../i18n/translation";
+
+
+
+ export default function Contact({ lang }) {
    const [state, handleSubmit] = useForm("xyzykanw");
    const contactAnimationRef = useRef(null); // Crée une référence pour l'animation
- 
+    const t = translations[lang]; // 👈 texte selon langue
    const handleFormSubmit =  (event) => {
      event.preventDefault();
      
@@ -100,14 +103,14 @@ export default function Contact() {
      <section id='contact' className=' contact-us'>
        <h1 className='title'>
          <span className='icon-envelope'></span>
-         Contact us
+         {t.contact_title}
        </h1>
-       <p className='sub-title'>Contactez-nous pour plus d'informations</p>
+       <p className='sub-title'>{t.contact_subtitle}</p>
  
        <div style={{ justifyContent: "space-between" }} className="flex">
          <form onSubmit={handleFormSubmit}>
            <div className='flex'>
-             <label htmlFor="email">Adresse email :</label>
+             <label htmlFor="email">{t.email_address}</label>
              <input autoComplete='off' required type="email" name='email' id='email' />
  
              <ValidationError
@@ -118,7 +121,7 @@ export default function Contact() {
            </div>
  
            <div className='flex' style={{ marginTop: "24px" }}>
-             <label htmlFor="message">Votre message :</label>
+             <label htmlFor="message">{t.your_message}</label>
              <textarea required name="message" id="message"></textarea>
              <ValidationError
                prefix="Message"
@@ -128,12 +131,12 @@ export default function Contact() {
            </div>
  
            <button type="submit" disabled={state.submitting} className='submit'>
-             {state.submitting ? "Soumission ..." : "Soumettre"}
+             {state.submitting ? "Soumission ..." : t.send}
            </button>
            {state.succeeded && (
              <p className='flex msg_env ' >
                <Lottie style={{ height: 35 }} animationData={doneAnimation} loop={false} />
-               Votre message a été envoyé avec succès👌
+                {t.message_sent}
              </p>
            )}
          </form>

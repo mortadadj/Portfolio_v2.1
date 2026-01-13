@@ -149,14 +149,15 @@ main section.right-section {
 }
 
 .card  .icon-github,
-.icon-link {
+.icon-link, .icon-arrow-right, .icon-close {
     font-size: 1rem;
     color: var(--subtitle);
     transition: 0.3s;
 }
+ 
 
 .card  .icon-github:hover,
-.icon-link:hover {
+.icon-link:hover, .icon-arrow-right:hover {
     font-size: 1.25rem;
     color: var(--icon-hover);
     cursor: pointer;
@@ -176,8 +177,8 @@ div .fixed{
     position: fixed;
     inset: 0;
     z-index: 11;
-    background-color: rgb(40, 40, 48,0.91);
-    
+    background-color: var(--primary);
+    color: var(--title);
     /*filter: blur(3px);*/ /*hadi traja3lk hada ga3 flus*/
     backdrop-filter: blur(4px); /*hadi traja3lk li mor hada flus*/
     
@@ -193,7 +194,7 @@ div .fixed{
 div .fixed ul.modal{
     animation: mymove 0.7s ;
 
-   width: 75%;
+   width: 70%;
    margin-left: auto;
    margin-right: auto;
    margin-top: 2rem;
@@ -209,6 +210,8 @@ div .fixed ul.modal li{
     padding-bottom: 0.77rem;
     padding-top: 0.5rem;
 }
+
+
  div .fixed ul.modal li:first-child{
     text-align: right;
     border: none;
@@ -256,5 +259,37 @@ div .fixed ul.modal li p.paragraphe {
             font-size: 0.9rem;
         
         }
-  
+   div .fixed ul.modal {
+    animation: mymove 0.7s;
+
+    width: 95vw;
+    height: 95vh;
+
+    margin: 0;              /* 🔴 IMPORTANT */
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border-radius: 0;
+    background-color: var(--secondary);
+    overflow: hidden;
+}
+div .fixed ul.modal li p.paragraphe {
+    white-space: pre-line;
+    line-height: 1.6rem;
+    font-size: clamp(0.9rem, auto, 2rem);
+
+    flex-grow: 1;
+    overflow-y: auto;
+
+    padding-right: 12px;
+
+    /* scrollbar invisible */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+
+
   }
+
+

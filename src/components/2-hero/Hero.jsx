@@ -1,68 +1,100 @@
 import React, { useRef } from 'react';
 import './hero.css';
-
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import Lottie from "lottie-react";
 
 import devAnimation from "../../animation/dev.json"
 import { motion } from 'framer-motion';
+import { translations } from "../../i18n/translation";
 
-export default function Hero() {
-  
-  
+export default function Hero({ lang }) {
+  const t = translations[lang]; // 👈 texte selon langue
   const lottieRef = useRef();
-
   return (
-
     <section id="about" className=' hero flex '>
 
       <div className='left-section '>
 
         <div className=" parent-avatar flex">
           <motion.img
-          initial={{transform :"scale(0)"}}
-          animate={{transform :"scale(1)"}}
-          transition={{damping:8, type :"spring",stiffness :200}}
-          
-          //initial={{scale:0}}
-          //animate={{scale:1.1}}
-          //transition={{duration:2, type :"spring",stiffness :200}}
-           src="./hlm.jpg" alt="" className='avatar' /> {/*djamel.jpg*/}
+            initial={{ transform: "scale(0)" }}
+            animate={{ transform: "scale(1)" }}
+            transition={{ damping: 8, type: "spring", stiffness: 200 }}
+
+            //initial={{scale:0}}
+            //animate={{scale:1.1}}
+            //transition={{duration:2, type :"spring",stiffness :200}}
+            src="./profile.jpg" alt="" className='avatar' /> {/*djamel.jpg*/}
           <div className='icon-verified'></div>
-        </div> 
-
-
-          <motion.h1
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{duration:2}}
-          className='title'>
-            Spécialiste en  développement web, applications mobiles et intelligence artificielle 
-          </motion.h1>
-          <p className='sub-title'>Je suis Djemal, développeur spécialisé Électrique industriel ,en sites Web et applications mobiles, avec une expertise en intelligence artificielle. Vous trouverez ici quelques-unes de mes réalisations.
-            </p>
-          <div className='all-icons flex'>
-
-            <div className="icon icon-twitter"> </div>
-            <div className="icon icon-instagram"> </div>
-            <div className="icon icon-github"> </div>
-            <div className="icon icon-linkedin"> </div>
-
-            
         </div>
-        
 
+
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className='title'>
+          {t.heroTitle}
+        </motion.h1>
+        <p className='sub-title'>
+          {t.heroSubtitle}
+        </p>
+        <div className='all-icons flex'>
+
+        {/*<a href="#" className="icon icon-twitter"></a>
+        <a href="#" className="icon icon-instagram"></a>
+       {/* WhatsApp */}
+  <a
+    href="https://wa.me/213782441310"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="WhatsApp"
+    className="icon"
+  >
+    <FaWhatsapp />
+  </a>
+
+  <a
+    href="mailto:31mortadadjabouri@gmail.com"
+    aria-label="Email"
+    className="icon"
+  >
+    <MdEmail />
+  </a>
+
+  <a
+    href="https://github.com/mortadadj"
+    target="_blank"
+    rel="noreferrer"
+    className="icon"
+    aria-label="GitHub"
+  >
+    <FaGithub />
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/mortada-djebbouri-24b299340/"
+    target="_blank"
+    rel="noreferrer"
+    className="icon"
+    aria-label="LinkedIn"
+  >
+    <FaLinkedin />
+  </a>
+        </div>
       </div>
       <div className='right-section animation '>
-      <Lottie 
-      lottieRef={lottieRef}
-       className='devAnimation' 
-      onLoadedImages={() => {
-        // @ts-ignore   
-        //https://lottiereact.com/
-        lottieRef.current.setSpeed(0.7);
-      }
-      }  
-        animationData={devAnimation}
+        <Lottie
+          lottieRef={lottieRef}
+          className='devAnimation'
+          onLoadedImages={() => {
+            // @ts-ignore   
+            //https://lottiereact.com/
+            lottieRef.current.setSpeed(0.7);
+          }
+          }
+          animationData={devAnimation}
         />
       </div>
 
