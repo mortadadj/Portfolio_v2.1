@@ -76,6 +76,7 @@ export default function Main({ lang }) {
           { id: "react", label: "React" },
           { id: "flutter", label: "Flutter" },
           { id: "ia", label: "IA" },
+          { id: "iot", label: "IoT" },
         ].map((btn) => (
           <button
             key={btn.id}

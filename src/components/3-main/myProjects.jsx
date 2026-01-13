@@ -255,10 +255,69 @@ Evaluation:
 The system was evaluated using real users registered on the platform, who tested the recommendations and provided feedback to assess their relevance and safety.
 `
   }
-}
+},
 
 
 ////////////////////////////
+
+{
+  projectTitle: {
+    fr: "Système de géolocalisation GPS en temps réel",
+    en: "Real-Time GPS Tracking System"
+  },
+
+  category: ["python", "iot", "gps", "linux", "mqtt", "backend"],
+
+  imgPath: "/gps.jpg",
+
+  subTitel: {
+    fr: "Collecte, traitement et transmission de données GPS depuis un système embarqué",
+    en: "Collection, processing and transmission of GPS data from an embedded system"
+  },
+
+  resume: {
+    fr: "Développement d’un système de suivi GPS en temps réel basé sur Linux embarqué, permettant la réception, l’analyse et le stockage des données de localisation.",
+    en: "Development of a real-time GPS tracking system based on embedded Linux, enabling reception, analysis, and storage of location data."
+  },
+paragraphe: {
+  fr: `
+Dans ce projet, une image Linux embarquée spécialisée a été construite à l’aide de Yocto Project,
+spécifiquement adaptée aux cartes i.MX6 et aux contraintes d’un système GPS embarqué.
+
+Des recettes Yocto et des configurations personnalisées ont été développées afin d’intégrer
+les bibliothèques et services nécessaires (Python, GPSD, parsing NMEA, MQTT).
+L’image générée permet un fonctionnement optimisé et stable sur la plateforme cible.
+
+Une application GPS a ensuite été développée en Python et intégrée directement dans l’image
+Linux embarquée. Cette application assure la collecte des données GPS, leur traitement
+(extraction latitude, longitude, vitesse, altitude, date et heure),
+puis leur transmission vers un backend via MQTT.
+
+L’ensemble de la solution forme un système embarqué complet,
+allant du build de l’image Linux jusqu’à l’exploitation des données GPS en temps réel.
+  `,
+  en: `
+In this project, a specialized embedded Linux image was built using the Yocto Project,
+specifically tailored for i.MX6 boards and GPS embedded system constraints.
+
+Custom Yocto recipes and configurations were created to integrate the required libraries
+and services (Python, GPSD, NMEA parsing, MQTT).
+The generated image ensures optimized and stable operation on the target hardware.
+
+A GPS application was then developed in Python and directly integrated into the embedded
+Linux image. This application handles GPS data collection, processing
+(latitude, longitude, speed, altitude, date and time extraction),
+and transmission to a backend server via MQTT.
+
+The complete solution covers the full embedded workflow,
+from Linux image build to real-time GPS data exploitation.
+  `
+}
+
+},
+
+////////////////////////////////////////////
+
 
 ];
 
